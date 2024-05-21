@@ -10,5 +10,8 @@
 <?php
    require_once '../includes/menu.php';
    ?>
+   <a href="/Blog/pages/newBlog.php">
+    Créer un nouvel article
+   </a>
 </body>
 </html>

@@ -1,3 +1,9 @@
+<?php
+if (isset($_COOKIE['username'])) {
+    header('Location: /Blog');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +18,19 @@
     <?php
     require_once '../includes/menu.php';
     ?>
-  <div class="signin">
-        <form action="">
+    <div class="signin">
+
+        <?php
+        if (isset($_POST['email']) && $_GET['error']) {
+            echo "<h2>Email invalide. Veuillez saisir entre 5 et 50 caractères.</h2>";
+        }
+
+        if (isset($_GET['password']) ==  'error') {
+            echo "<h2>les mots de passe ne sont pas identiques</h2>";
+        }
+        ?>
+
+        <form action="/Blog/processing/authentification.php" method="POST">
             <label for="username">Adresse Email</label>
             <input type="email" name="email" id="email" placeholder="Saisir votre adresse email" required>
 
