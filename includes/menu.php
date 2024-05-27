@@ -3,26 +3,26 @@
         <tr>
             <td>Blog</td>
             <td>
-                <ul>
-                    <li>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
                         <a href="/Blog/index.php" class="<?= (!isset($_GET["page"]) ?
-                                                                "menu-active" : ""); ?>">Home</a>
+                                                                "menu-active" : ""); ?> nav-link active" aria-current="page">Home</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="/Blog/pages/articles.php?page=articles" class="<?= (isset($_GET["page"])
-                                                                                    && $_GET["page"] == "articles" ? "menu-active" : ""); ?>">Articles</a>
+                                                                                    && $_GET["page"] == "articles" ? "menu-active" : ""); ?> nav-link active" aria-current="page">Articles</a>
                     </li>
 
                     <?php
             if (!isset($_COOKIE['username'])) {
             ?>
-                  <li>
+                  <li class="nav-item">
                         <a href="/Blog/pages/inscription.php?page=inscription" class="<?= (isset($_GET["page"])
-                                                                                            && $_GET["page"] == "inscription" ? "menu-active" : ""); ?>">Inscription</a>
+                                                                                            && $_GET["page"] == "inscription" ? "menu-active" : ""); ?> nav-link active" aria-current="page">Inscription</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="/Blog/pages/connexion.php?page=connexion" class="<?= (isset($_GET["page"])
-                                                                                        && $_GET["page"] == "connexion" ? "menu-active" : ""); ?>">Connexion</a>
+                                                                                        && $_GET["page"] == "connexion" ? "menu-active" : ""); ?> nav-link active" aria-current="page">Connexion</a>
                     </li>
             <?php
             }
@@ -42,3 +42,6 @@
         </tr>
     </table>
 </header>
+
+
+  
