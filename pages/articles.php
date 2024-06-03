@@ -30,7 +30,7 @@ date_default_timezone_set('Africa/Lome');
     ?>
         <div class="container">
             <div class="row">
-                <div class=" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <article>
                         <img src="../assets/db/files/<?= $data['file_name'] ?>" alt="<?= $data['title'] ?> " width="100%">
                         <h3> <?= $data['title'] ?></h3>
@@ -38,14 +38,25 @@ date_default_timezone_set('Africa/Lome');
                         <?= $data['long_description'] ?>
                         <hr />
                     </article>
-                    <form action="../processing/reaction.php" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
-                        <textarea name="commentaire" id="commentaire" placeholder="votre commentaire ici"></textarea><br />
-                        <button type="submit" name="submitComment">Comment</button>
 
+
+
+                    <form action="../processing/reaction.php" method="POST" enctype="multipart/form-data" class="mb-5">
+                        <div class="form-floating">
+                            <textarea name="commentaire" id="commentaire" class="form-control" required></textarea><br />
+                            <label for="">leave comment here ...</label>
+                        </div>
+                        <input type="hidden" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>" >
+                        <div class="col-xl-4">
+                            <button type="submit" name="submitComment" class="btn btn-dark">Comment</button>
+                        </div>
                     </form>
+
+
                 </div>
+
             </div>
+        </div>
 
         </div>
 
